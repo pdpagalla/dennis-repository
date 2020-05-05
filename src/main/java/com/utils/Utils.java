@@ -77,12 +77,12 @@ public class Utils {
         setBrowser(props.getProperty("browser"));
     }
 
-    public void readData() throws IOException {
+    public void readData(String sheetName) throws IOException {
 
         File file = new File(System.getProperty("user.dir") + "/src/main/resources/TestData.xlsx");
         FileInputStream fis = new FileInputStream(file);
         XSSFWorkbook workbook = new XSSFWorkbook(fis);
-        Sheet sheet = workbook.getSheet("Sheet1");
+        Sheet sheet = workbook.getSheet(sheetName);
         int lastRowNum = sheet.getLastRowNum();
 
         for(int i=1;i<=lastRowNum;i++){

@@ -14,7 +14,7 @@ public class Tests extends Utils{
     public void beforeClass() throws IOException {
         launchBrowser();
         navigateToUrl();
-        readData();
+        readData("Sheet1");
     }
 
     @Test
