@@ -101,14 +101,13 @@ public class Utils {
 
     public void launchBrowser() {
         String value = getBrowser();
-        switch (value) {
-            case "chrome":
-                WebDriverManager.chromedriver().setup();
-                driver = new ChromeDriver();
-            case "firefox":
-                WebDriverManager.firefoxdriver().setup();
-                driver = new FirefoxDriver();
-        }
+       if(value.contains("chrome")){
+           WebDriverManager.chromedriver().setup();
+           driver = new ChromeDriver();
+        }else if(value.contains("firefox")){
+           WebDriverManager.firefoxdriver().setup();
+           driver = new FirefoxDriver();
+       }
         driver.manage().window().maximize();
 
     }
