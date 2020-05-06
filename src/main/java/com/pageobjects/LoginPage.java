@@ -26,6 +26,7 @@ public class LoginPage extends Utils{
     }
 
     public void login(){
+
         username.sendKeys(uname);
         password.sendKeys(pwd);
         submit.click();

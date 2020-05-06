@@ -9,10 +9,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.PageFactory;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
 import java.util.HashMap;
 import java.util.Properties;
 import java.util.Random;
@@ -64,7 +61,14 @@ public class Utils {
     static String username;
 
     static{
-        InputStream inputStream = Utils.class.getClassLoader().getResourceAsStream("Environment.properties");
+        File file = new File(System.getProperty("user.dir") + "/src/main/resources/Environment.properties");
+        FileInputStream inputStream = null;
+        try {
+            inputStream = new FileInputStream(file);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        //InputStream inputStream = Utils.class.getClassLoader().getResourceAsStream("Environment.properties");
         Properties props = new Properties();
         try {
             props.load(inputStream);
