@@ -8,8 +8,8 @@ import org.testng.Assert;
 
 public class LoginPage extends Utils{
 
-    static String uname = getUsername();
-    static String pwd = getPassword();
+    String uname = getUsername();
+    String pwd = getPassword();
     //static String expectedTitle = myMap.get("Login Page Title");
 
     @FindBy(id = "username")
@@ -26,9 +26,9 @@ public class LoginPage extends Utils{
     }
 
     public void login(){
-        enterText(username,uname);
-        enterText(password,pwd);
-        click(submit);
+        username.sendKeys(uname);
+        password.sendKeys(pwd);
+        submit.click();
     }
 
     /*public void verifyTitle() {

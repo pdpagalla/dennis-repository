@@ -23,14 +23,15 @@ public class Utils {
     public static HashMap<String, String> myMap = new HashMap<String, String>();
 
     public static String getUrl() {
-        return url;
+
+        return myurl;
     }
 
     public static void setUrl(String url) {
-        Utils.url = url;
+        Utils.myurl = url;
     }
 
-    static String url;
+    static String myurl;
 
     public static String getBrowser() {
         return browser;
@@ -56,11 +57,11 @@ public class Utils {
         Utils.username = username;
     }
 
-    public static String getUsername() {
+    public String getUsername() {
         return username;
     }
 
-    private static String username;
+    static String username;
 
     static{
         InputStream inputStream = Utils.class.getClassLoader().getResourceAsStream("Environment.properties");
